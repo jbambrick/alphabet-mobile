@@ -1,0 +1,19 @@
+{
+    "colors": {
+        "primary": "purple",
+        "secondary": "black",
+        "teritary": "#10879b",
+        "text": "#ffff",
+        "textDark": "#000000",
+        "accent": "#ffff"
+    },
+    "fonts": {
+        "primary": "Arial",
+        "secondary": "Arial"
+    },
+    "fontSizes": {
+        "large": 34,
+        "medium": 26,
+        "small": 14
+    }
+}
