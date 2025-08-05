@@ -19,7 +19,7 @@ import {
 import { setupStore } from '../components/Redux/store';
 import Background from './background';
 import CreditsScreen from './credits';
-import { AlphabetCardDetailScreen } from './detail';
+import AlphabetCardDetailScreen from './detail';
 import HomeScreen from './home';
 import MenuScreen from './menu';
 
@@ -63,8 +63,8 @@ export default function RootLayout() {
                                     headerBackground: () => (
                                         <Background children={undefined} />
                                     ),
-
                                     headerTintColor: 'white',
+                                    headerTitleAlign: 'center',
                                 }}
                             >
                                 <Stack.Screen
@@ -72,14 +72,14 @@ export default function RootLayout() {
                                     component={HomeScreen}
                                 />
                                 <Stack.Screen
-                                    options={{ title: 'Select Letter' }}
                                     name="Menu"
                                     component={MenuScreen}
+                                    options={{ title: 'Select Letter' }}
                                 />
                                 <Stack.Screen
-                                    options={{ title: 'Alphabet' }}
                                     name="Detail"
                                     component={AlphabetCardDetailScreen}
+                                    options={{ title: 'Alphabet' }}
                                 />
                                 <Stack.Screen
                                     name="Credits"
