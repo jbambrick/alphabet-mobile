@@ -1,4 +1,5 @@
-import { useNavigation } from '@react-navigation/native';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Image } from 'expo-image';
 import {
     Pressable,
@@ -14,7 +15,8 @@ import { alphabetButton, homeScreen } from './styles';
 export default function HomeScreen() {
     const appName = config.appName;
     const alphabetLanguage = config.language;
-    const navigation = useNavigation();
+    const navigation =
+        useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
     const { width, height } = useWindowDimensions();
 
@@ -24,6 +26,8 @@ export default function HomeScreen() {
                 <ScrollView>
                     <View>
                         <Image
+                            contentFit="contain"
+                            priority={'high'}
                             source={{
                                 uri: config.appImage,
                             }}
@@ -63,7 +67,7 @@ export default function HomeScreen() {
                     >
                         <Pressable
                             testID="Menu"
-                            onPress={() => navigation.push('Menu')}
+                            onPress={() => navigation.navigate('Menu')}
                         >
                             <Text style={alphabetButton.alphabetName}>
                                 Alphabet
@@ -107,15 +111,8 @@ export default function HomeScreen() {
                                     uri: config.coscradLogoUrl,
                                 }}
                                 alt="Coscrad"
-                                // style={[homeScreen.coscradImage]}
-                                // contentFit="cover"
-                                style={{
-                                    height: 120,
-                                    width: 120,
-                                    marginVertical: -53,
-                                    // position: 'absolute',
-                                    alignContent: 'center',
-                                }}
+                                contentFit="cover"
+                                style={[homeScreen.coscradImage]}
                                 contentPosition={'bottom'}
                             />
                         </View>

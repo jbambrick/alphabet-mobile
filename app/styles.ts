@@ -46,13 +46,12 @@ export const homeScreen = StyleSheet.create({
         width: 130,
         height: 130,
         alignSelf: 'center',
-        resizeMode: 'contain',
     },
     coscradImage: {
-        height:80,
-        width:130,
-        alignSelf:'center',
-        resizeMode:'cover',     
+        height: 120,
+        width: 120,
+        marginVertical: -53,
+        alignContent: 'center',
     },
     tagline: {
         color: theme.colors.text,
@@ -73,16 +72,14 @@ export const homeScreen = StyleSheet.create({
     footerText: {
         color: theme.colors.text,
         fontSize: theme.fontSizes.small,
+        marginBottom:20
     },
 });
 
 export const creditsScreen = StyleSheet.create({
     page: {
         margin: 6,
-        backgroundColor:'rgba(0, 0, 0, 0)',
-        backgroundImage:'rgba(0, 0, 0, 0)',
         textAlign: 'center',
-        // opacity:0.5
     },
     text: {
         fontSize: theme.fontSizes.small,
@@ -99,7 +96,6 @@ export const loadingComponent = StyleSheet.create({
         height: 80,
         width: 80,
         alignSelf: 'center',
-        resizeMode: 'contain',
     },
     text: {
         color: theme.colors.text,
@@ -191,7 +187,6 @@ export const alphabetCard = StyleSheet.create({
     image: {
         width: 380,
         height: 160,
-        resizeMode: 'cover',
         alignSelf: 'center',
     },
 });

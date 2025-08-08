@@ -9,7 +9,9 @@ export default function CreditsScreen() {
     return (
         <Background>
             <View style={[creditsScreen.page]}>
-                <Text style={[creditsScreen.text]}>{contributions}</Text>
+                <Text selectable={true} style={[creditsScreen.text]}>
+                    {contributions}
+                </Text>
             </View>
         </Background>
     );

@@ -1,9 +1,8 @@
 import { fetchAlphabets } from '@/components/Redux/store/slices/alphabet-slice';
 import { selectAlphabet } from '@/components/Redux/store/slices/selectors';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { Image } from 'expo-image';
 import { useEffect } from 'react';
 import {
-    Image,
     Pressable,
     ScrollView,
     Text,
@@ -26,9 +25,8 @@ type NavigationState = {
     Menu: undefined;
 };
 
-export const MenuScreen = ({
-    navigation,
-}: NativeStackScreenProps<NavigationState, 'Menu'>) => {
+//TODO use a proper type
+export const MenuScreen = ({ navigation }: any) => {
     const { width } = useWindowDimensions();
 
     const dispatch = useDispatch<AppDispatch>();
@@ -53,6 +51,7 @@ export const MenuScreen = ({
                         source={{
                             uri: config.appImage,
                         }}
+                        contentFit="contain"
                     />
                     <Text style={[loadingComponent.text]}>Loading</Text>
                 </View>
