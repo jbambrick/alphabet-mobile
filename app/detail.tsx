@@ -96,15 +96,8 @@ export function AlphabetCardDetailScreen({ route }: { route: any }) {
         return <Text>Card not found.</Text>;
     }
 
-    const {
-        word,
-        letter,
-        sequence_number,
-        card_image,
-        letter_audio,
-        word_audio,
-        standalone_image,
-    } = selectedCard;
+    const { word, letter, letter_audio, word_audio, standalone_image } =
+        selectedCard;
 
     const swipeRight = () => {
         setSelectedLetterSequenceNumber(

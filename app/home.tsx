@@ -112,12 +112,7 @@ export default function HomeScreen() {
                                 }}
                                 alt="Coscrad"
                                 contentFit="cover"
-                                style={{
-                                    height: 120,
-                                    width: 120,
-                                    marginVertical: -53,
-                                    alignContent: 'center',
-                                }}
+                                style={[homeScreen.coscradImage]}
                                 contentPosition={'bottom'}
                             />
                         </View>

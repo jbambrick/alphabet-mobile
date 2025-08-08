@@ -48,9 +48,10 @@ export const homeScreen = StyleSheet.create({
         alignSelf: 'center',
     },
     coscradImage: {
-        height:80,
-        width:130,
-        alignSelf:'center',
+        height: 120,
+        width: 120,
+        marginVertical: -53,
+        alignContent: 'center',
     },
     tagline: {
         color: theme.colors.text,

@@ -1,4 +1,4 @@
-import { useColorScheme } from '@/hooks/useColorScheme';
+import '@expo/metro-runtime';
 import {
     NavigationContainer,
     NavigationIndependentTree,
@@ -18,6 +18,7 @@ import {
 } from '../components/Redux/config';
 import { setupStore } from '../components/Redux/store';
 import Background from './background';
+import config from './config.json';
 import CreditsScreen from './credits';
 import AlphabetCardDetailScreen from './detail';
 import HomeScreen from './home';
@@ -25,10 +26,11 @@ import MenuScreen from './menu';
 
 const Stack = createNativeStackNavigator();
 
+const appName = config.appName;
+
 interface AppLaunchArguments {
     configOverrides?: Partial<ConfigStore>;
 }
-
 export default function RootLayout() {
     const [config, setConfig] = useState<ConfigStore | null>(null);
 
@@ -37,14 +39,16 @@ export default function RootLayout() {
         setUpConfig(configOverrides).then(setConfig);
     }, []);
 
-    const colorScheme = useColorScheme();
-
     const [loaded] = useFonts({
         SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
     });
 
     if (config === null) {
-        return <ActivityIndicator size={'large'} />;
+        return (
+            <Background>
+                <ActivityIndicator size={'large'} />
+            </Background>
+        );
     }
 
     if (!loaded) {
@@ -57,7 +61,7 @@ export default function RootLayout() {
                 <Background>
                     <NavigationIndependentTree>
                         <NavigationContainer>
-                            <StatusBar style="light" />
+                            <StatusBar style={'light'} />
                             <Stack.Navigator
                                 screenOptions={{
                                     headerBackground: () => (
@@ -79,7 +83,7 @@ export default function RootLayout() {
                                 <Stack.Screen
                                     name="Detail"
                                     component={AlphabetCardDetailScreen}
-                                    options={{ title: 'Alphabet' }}
+                                    options={{ title: appName }}
                                 />
                                 <Stack.Screen
                                     name="Credits"
